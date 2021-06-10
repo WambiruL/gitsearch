@@ -7,6 +7,7 @@ import { UserComponent } from './user/user.component';
 import { HighlightDirective } from './highlight.directive';
 import { DatePipe } from './date.pipe';
 import { SearchformComponent } from './searchform/searchform.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchformComponent } from './searchform/searchform.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
