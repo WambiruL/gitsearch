@@ -11,7 +11,7 @@ export class HighlightDirective {
     this.highlight('cyan');
   }
   @HostListener('mouseleave') onMouseLeave(){
-    this.highlight('null');
+    this.highlight('white');
   }
 
   private highlight(color:string){
