@@ -8,6 +8,7 @@ import { HighlightDirective } from './highlight.directive';
 import { DatePipe } from './date.pipe';
 import { SearchformComponent } from './searchform/searchform.component';
 import { FormsModule } from '@angular/forms';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     UserComponent,
     HighlightDirective,
     DatePipe,
-    SearchformComponent
+    SearchformComponent,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,
