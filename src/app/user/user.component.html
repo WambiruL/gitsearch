@@ -1,1 +1,35 @@
-<p>user works!</p>
+<div class="container-fluid">
+<div class="overlay">
+    <div class="container content">
+      <div class="row">
+        <div class="col-sm-4" id="imgcard">
+          <div class="userimage">
+            <div class="card-img-top">
+              <img src="{{users.avatar_url}}" alt="">
+            </div>
+            <div class="card-body">
+                <span  class="name"><i class="fa fa-user" style="font-size:20px"></i> &nbsp;{{users.login}}</span> <a href="{{users.html_url}}"><button class="btn-outline-success btn btn-sm"><i class="fa fa-github" style="font-size:20px"></i> &nbsp; <span id="profile">Github</span> </button></a>
+            </div>
+          </div>
+          </div>
+        <div class="col-sm-7 user">
+          <div class="card">
+            <div class="card-body">
+              <h4>Git-Search: {{users.login}}</h4>
+              <hr>
+              <p><i class="fa fa-file-o" style="font-size:18px"></i>&nbsp;&nbsp; Repositories:&nbsp;&nbsp; <span class="follow">{{users.public_repos}}</span></p>
+              <hr>
+              <p> <i class="fa fa-user" style="font-size:18px"></i>&nbsp;&nbsp; Following:&nbsp;&nbsp; <span class="follow">{{users.following}}</span></p>
+              <hr>
+              <p> <i class="fa fa-users"style="font-size:18px"></i>&nbsp;&nbsp; Followers:&nbsp;&nbsp; <span class="follow">{{users.followers}}</span></p>
+              <hr>
+              <p><i class="fa fa-clock-o" style="font-size:18px"></i>&nbsp;&nbsp; Joined:&nbsp;&nbsp; <span class="datejoined">{{users.created_at | date}}</span></p>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="click" class="text-center">
+        <a href="#reps"><img src="https://raw.githubusercontent.com/Owiti-Charles/Git-Search/master/src/assets/mouse_click.png" alt=" mouse_click" id="mouse-click"></a>
+    </div>
