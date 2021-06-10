@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HighlightDirective } from './highlight.directive';
 import { DatePipe } from './date.pipe';
+import { SearchformComponent } from './searchform/searchform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     HighlightDirective,
-    DatePipe
+    DatePipe,
+    SearchformComponent
   ],
   imports: [
     BrowserModule,
