@@ -9,6 +9,7 @@ import { DatePipe } from './date.pipe';
 import { SearchformComponent } from './searchform/searchform.component';
 import { FormsModule } from '@angular/forms';
 import { RepositoriesComponent } from './repositories/repositories.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RepositoriesComponent } from './repositories/repositories.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
