@@ -12,6 +12,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     HighlightDirective,
     DatePipe,
     SearchformComponent,
-    RepositoriesComponent
+    RepositoriesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,9 @@
 <div class="container-fluid">
+  <ng-progress></ng-progress>
   <app-searchform (searchOutput)= "repoSearch($event)"></app-searchform>
     <div class="container">
         <div class="container allrepos">
-            <div class="card" appHighlight *ngFor="let repo  repos" style="width: 22rem;" class="repo">
+            <div class="card" appHighlight *ngFor="let repo of repos " style="width: 22rem;" class="repo">
               <div class="card-body">
                 <h5 class="card-title">Repo Name: &nbsp;{{repo.name}} </h5>
                 <div class="card-text">

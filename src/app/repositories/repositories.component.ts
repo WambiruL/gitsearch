@@ -8,15 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
+  router: any;
+  goToUrl(id){
+    this.router.navigate(['/repos', id])
+  }
 
-  repos:Repo;
+  repos:Repo[];
 
   constructor(public reposervice: UserService) { }
 
   repoSearch(searchName: string){
     this.reposervice.getRepos(searchName).then(
       (_results: any)=>{
-        this.repos=this.reposervice.allRepos
+        //this.repos=this.reposervice.allRepos
         console.log(this.repos);
       },
       (error: any)=>{

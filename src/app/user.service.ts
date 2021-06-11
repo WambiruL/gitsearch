@@ -29,12 +29,12 @@ export class UserService {
       created_at:Date;
     }
 
-    return new Promise<void>((resolve,reject)=>{
+    return new Promise((resolve,reject)=>{
     this.http.get<Response>('https://api.github.com/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(
       (result)=>{
         this.foundUser=result;
         console.log(this.foundUser);
-        resolve();
+        resolve;
       },
       (error)=>{
         console.log(error);
@@ -55,11 +55,11 @@ export class UserService {
       created_at:Date;
     }
 
-    return new Promise<void>((resolve,reject)=>{
+    return new Promise((resolve,reject)=>{
       this.http.get<Repo>('https://api.github.com/users/'+searchName+"/repos?order=created&sort=asc?access_token="+environment.apiKey).toPromise().then(
         (results)=>{
           this.allRepos=results;
-          resolve();
+          resolve;
         },
         (error)=>{
           console.log(error);
