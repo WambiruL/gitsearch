@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  users!: User;
-  repos!:Repo;
+  users:User;
+  repos:Repo;
 
   constructor(public myservice:UserService, private reposervice: UserService) { }
 

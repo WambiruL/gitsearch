@@ -9,17 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepositoriesComponent implements OnInit {
 
-  repos!: Repo;
+  repos:Repo;
 
   constructor(public reposervice: UserService) { }
 
-  repoSearch(searchName){
+  repoSearch(searchName: string){
     this.reposervice.getRepos(searchName).then(
-      (results)=>{
-        this.repo=this.reposervice.allRepos
+      (_results: any)=>{
+        this.repos=this.reposervice.allRepos
         console.log(this.repos);
       },
-      (error)=>{
+      (error: any)=>{
         console.log(error);
       }
     );
