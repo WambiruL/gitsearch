@@ -18,7 +18,7 @@ export class UserService {
 
 
   searchUser(searchName:string){
-    interface Response {
+    interface ApiResponse {
       url:string;
       login: string;
       html_url:string;
@@ -30,7 +30,7 @@ export class UserService {
     }
 
     return new Promise((resolve,reject)=>{
-    this.http.get<Response>('https://api.github.com/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(
+    this.http.get<ApiResponse>('https://api.github.com/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(
       (result)=>{
         this.foundUser=result;
         console.log(this.foundUser);

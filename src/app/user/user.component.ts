@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
     this.router.navigate(['/repos', id])
   }
   users:User;
-  repos:Repo[];
+  repos:Repo;
 
   constructor(public myservice:UserService, private reposervice: UserService) { }
 
@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
     );
     this.reposervice.getRepos(searchName).then(
       ()=>{
-       // this.repos=this.reposervice.allRepos
+      this.repos=this.reposervice.allRepos
         console.log(this.repos);
       },
       (error: any)=>{
@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.searchs('WambiruL')
+    this.searchs('WambiruL');
   }
 
 }

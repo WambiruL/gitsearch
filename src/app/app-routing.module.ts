@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'/users', component:UserComponent},
   {path:'/repos', component:RepositoriesComponent},
   { path:'**', component:NotfoundComponent},
+  { path: '', redirectTo:"/goals", pathMatch:"full"}
 
 ];
 

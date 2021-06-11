@@ -13,14 +13,14 @@ export class RepositoriesComponent implements OnInit {
     this.router.navigate(['/repos', id])
   }
 
-  repos:Repo[];
+  repos:Repo;
 
   constructor(public reposervice: UserService) { }
 
   repoSearch(searchName: string){
     this.reposervice.getRepos(searchName).then(
       (_results: any)=>{
-        //this.repos=this.reposervice.allRepos
+        this.repos=this.reposervice.allRepos
         console.log(this.repos);
       },
       (error: any)=>{
@@ -30,7 +30,7 @@ export class RepositoriesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.repoSearch('WambiruL')
+    this.repoSearch('WambiruL');
   }
 
 }
