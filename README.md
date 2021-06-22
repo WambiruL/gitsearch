@@ -9,7 +9,7 @@ It is an app where users may enter a GitHub username into a form, submit it, and
 # Installation/set-up instruction
 1.Open Terminal {Ctrl+Alt+T}
 
-2.git clone https://github.com/WambiruL/git-search.git
+2.git clone https://github.com/WambiruL/gitsearch.git
 
 3 cd quotes
 
