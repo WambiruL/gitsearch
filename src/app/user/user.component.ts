@@ -1,8 +1,6 @@
-import { Repo } from './../repo';
 import { UserService } from './../user.service';
 import { User } from './../user';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -10,37 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  router: any;
-  goToUrl(id){
-    this.router.navigate(['/repos', id])
+
+  user:User;
+  repoDetails=[];
+  UserService: UserService;
+  hideInput:boolean;
+
+  constructor(public myservice:UserService) {
+    this.UserService=myservice;
   }
-  users:User;
-  repos:Repo;
 
-  constructor(public myservice:UserService, private reposervice: UserService) { }
+  @Output() toggleBack= new EventEmitter();
 
-  searchs(searchName: string){
-    this.myservice.searchUser(searchName).then(
-      (_success: any)=>{
-        this.users=this.myservice.foundUser;
-      },
-      (error: any)=>{
-        console.log(error)
-      }
-    );
-    this.reposervice.getRepos(searchName).then(
-      ()=>{
-      this.repos=this.reposervice.allRepos
-        console.log(this.repos);
-      },
-      (error: any)=>{
-        console.log(error);
-      }
-    );
+  goBack(){
+    this.hideInput=true;
+    this.toggleBack.emit(this.hideInput);
   }
 
   ngOnInit(): void {
-    this.searchs('WambiruL');
+    this.user=this.UserService.foundUser
+    this.repoDetails=this.UserService.repoData
   }
 
 }

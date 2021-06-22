@@ -1,6 +1,8 @@
 import { UserService } from './../user.service';
-import { Repo } from './../repo';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+import { User } from '../user';
 
 @Component({
   selector: 'app-repositories',
@@ -8,29 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
-  router: any;
-  goToUrl(id){
-    this.router.navigate(['/repos', id])
+
+  user:User;
+  username:string;
+  UserService:UserService;
+  public showInput=true;
+  public showData=false;
+
+  submitUsername(){
+    this.UserService.searchUser(this.username);
+    this.showInput=false;
+    this.showData=true;
   }
 
-  repos:Repo;
-
-  constructor(public reposervice: UserService) { }
-
-  repoSearch(searchName: string){
-    this.reposervice.getRepos(searchName).then(
-      (_results: any)=>{
-        this.repos=this.reposervice.allRepos
-        console.log(this.repos);
-      },
-      (error: any)=>{
-        console.log(error);
-      }
-    );
+  showUserInput(hideInput){
+    this.showInput=hideInput;
+    this.showData=false;
   }
 
-  ngOnInit(): void {
-    this.repoSearch('WambiruL');
+  constructor(public myservice: UserService) {
+    this.UserService=myservice;
+  }
+
+  ngOnInit(){
   }
 
 }

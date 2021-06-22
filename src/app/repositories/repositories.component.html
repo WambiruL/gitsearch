@@ -1,34 +1,19 @@
-<div class="container-fluid">
+<div class="row mt100" *ngIf="showInput">
   <ng-progress></ng-progress>
-  <app-searchform (searchOutput)= "repoSearch($event)"></app-searchform>
-    <div class="container">
-        <div class="container allrepos">
-            <div class="card" appHighlight *ngFor="let repo of repos " style="width: 22rem;" class="repo">
-              <div class="card-body">
-                <h5 class="card-title">Repo Name: &nbsp;{{repo.name}} </h5>
-                <div class="card-text">
-                  <hr>
-                  <div class="desc"><span class="top">Description:</span> &nbsp;{{repo.description}}
-                  </div>
-                  <hr>
-                  <div class="card-subtitle mb-2">
-                      <span class="top">Language: </span> {{repo.language}}
-                  </div>
-                  <div class="card-subtitle mb-2"><span class="top">Created On:</span> &nbsp;{{repo.created_at | date}}</div>
-                </div>
-                </div>
-                <div class="card-footer">
-                  <div class="btn-group" role="group" aria-label="Third group">
-                    <button class="btn btn-sm btn-info"><i class="fa fa-eye" style="font-size:16px"></i> {{repo.watchers_count}}</button>
-                  </div>
-                  <div class="btn-group" role="group" aria-label="Third group">
-                    <button class="btn btn-sm btn-outline-danger"><i class="fa fa-code-fork" style="font-size:16px"></i> {{repo.forks}}</button>
-                  </div>
-                  <div class="btn-group" role="group" aria-label="Third group">
-                    <button class="btn btn-sm btn-success" id="visit"><a href="{{repo.html_url}}" class="card-link">Visit &nbsp; <i class="fa fa-arrow-circle-right" style="font-size:16px"></i></a> </button>
-                  </div>
-                </div>
-            </div>
-          </div>
-    </div>
+	<div class="col-md-2"></div>
+	<div class="col-md-8 repositories">
+		<img class="mb15" src="">
+		<form (ngSubmit)='submitUsername()' #repositories='ngForm' name="repositories">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<input type="text" class="form-control input-lg mb15 user-input" id="username" [(ngModel)]="username" name="username" placeholder="Github Username">
+					<button type="submit"  class="btn btn-success btn-lg btn-block">Search GitHub User & Repos</button>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-2"></div>
 </div>
+<app-user *ngIf="showData" (toggleBack)="showUserInput($event)"></app-user>

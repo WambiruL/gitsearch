@@ -1,0 +1,13 @@
+p{
+  font-size: 50px;
+  text-align: center;
+  background-color: brown;
+  color: aliceblue;
+}
+a{
+  background-color: aqua;
+}
+a:hover{
+  background-color: coral;
+}
+
